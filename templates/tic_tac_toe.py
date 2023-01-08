@@ -80,4 +80,15 @@ def add_symbol(*args, **kwargs):
                                 write('y_score', f"O: {o_score} point")
                             else:
                                 write('y_score', f"O: {o_score} points")
-                        break
+                        
+                        # Reset Turn Counter & Gameboard
+                        turn_counter = 0
+                        write('turn_counter', f"Turn {turn_counter}")
+                        board_array = [
+                                        "", "", "",
+                                        "", "", "",
+                                        "", "", ""
+                                    ]
+                        for i in range (0, 9):
+                            write(f'btn{i}', "")
+
