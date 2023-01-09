@@ -7,7 +7,7 @@ This game won't change the world, but is a bit of fun
 
 # Design
 
-Inspiration - from Google Tic_Tac_Toe - See link below
+Inspiration - from Google Tic_Tac_Toe
 
 # Technologies
 
