@@ -1,4 +1,5 @@
 from pyscript import Element, write
+import utils
 
 # global gamestate variables
 turn_counter = 0
@@ -81,12 +82,7 @@ def add_symbol(*args, **kwargs):
                                 write('y_score', f"O: {o_score} points")
                         
                         # Reset Turn Counter & Gameboard
+                        board_array = utils.reset_board()
                         turn_counter = 0
-                        board_array = [
-                                        "", "", "",
-                                        "", "", "",
-                                        "", "", ""
-                                    ]
-                        for i in range (0, 9):
-                            write(f'btn{i}', "")
+                        
 
