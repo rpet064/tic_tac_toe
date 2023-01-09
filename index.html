@@ -7,11 +7,9 @@
   <!-- Google  Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Licorice&family=Montserrat:wght@100;400;700;900&family=Poppins&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./public/main.css">
   <!-- pyscript -->
-  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
   <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-  <!-- Tailwind css -->
 </head>
 </head>
 <body>
@@ -22,57 +20,74 @@
   </py-config>
   <py-script src="./templates/tic_tac_toe.py">
   </py-script>
+  
+  <div id="main" class="grid place-items-center">
 
-  <div id="scoreboard">
-    <h1>Tic-Tac-Toe</h1>
-    <div id="turn_counter" class="font-bold">Turn 0</div>
-    <div id="x_score">X: 0 Points</div>
-    <div id="y_score">O: 0 Points</div>
+    <!-- Scoreboard -->
+    <div id="scoreboard" class="w-3/6 h-full py-5">
+      <div class="container m-auto grid grid-cols-2 gap-1 bg-black text-white py-5 text-5xl">
+        <div id="x_score">X: 0 Points</div>
+        <div id="y_score">O: 0 Points</div> 
+      </div>
+    </div>
+
+    <div id="gameboard" class="h-24 w-3/6 cursor-pointer grid-cols-3">
+
+      <!-- Row 1 -->
+      <div class="h-full w-full grid grid-cols-3 bg-white text-black text-6xl">
+        <button id="btn0" 
+        class="py-button w-full h-full border-r-2" 
+        type="submit" py-click="add_symbol(0)">
+        </button>
+        
+        <button id="btn1" 
+        class="py-button w-full h-full border-r-2" 
+        type="submit" py-click="add_symbol(1)">
+        </button>
+        
+        <button id="btn2" 
+        class="py-button w-full h-full" 
+        type="submit" py-click="add_symbol(2)">
+        </button>
+        </div>
+
+      <!-- Row 2 -->
+      <div class="w-full h-full grid grid-cols-3 bg-white text-black text-6xl">
+        <button id="btn3" 
+        class="py-button w-full h-full border-t-2 border-r-2" 
+        type="submit" py-click="add_symbol(3)">
+        </button>
+        
+        <button id="btn4" 
+        class="py-button w-full h-full border-t-2 border-r-2" 
+        type="submit" py-click="add_symbol(4)">
+        </button>
+        
+        <button id="btn5" 
+        class="py-button w-full h-full border-t-2" 
+        type="submit" py-click="add_symbol(5)">
+        </button>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="w-full bg-white h-full grid grid-cols-3 text-black text-6xl">
+        <button id="btn6" 
+        class="py-button w-full h-full border-r-2 border-t-2" 
+        type="submit" py-click="add_symbol(6)">
+        </button>
+
+        <button id="btn7" 
+        class="py-button w-full h-full border-r-2 border-t-2" 
+        type="submit" py-click="add_symbol(7)">
+      </button>
+
+        <button id="btn8" 
+        class="py-button w-full h-full border-t-2" 
+        type="submit" py-click="add_symbol(8)">
+        </button>
+      </div>
+    </div>
   </div>
-
-  <div id="gameboard">
-    <div>
-      <button id="btn0" class="py-button" type="submit" py-click="add_symbol(0)">
-      </button>
-    </div>
-    <div>
-      <button id="btn1" class="py-button" type="submit" py-click="add_symbol(1)">
-      </button>
-    </div>
-    <div>
-      <button id="btn2" class="py-button" type="submit" py-click="add_symbol(2)">
-      </button>
-    </div>
-    <div>
-      <button id="btn3" class="py-button" type="submit" py-click="add_symbol(3)">
-      </button>
-    </div>
-    <div>
-      <button id="btn4" class="py-button" type="submit" py-click="add_symbol(4)">
-      </button>
-    </div>
-    <div>
-      <button id="btn5" class="py-button" type="submit" py-click="add_symbol(5)">
-      </button>
-    </div>
-    <div>
-      <button id="btn6" class="py-button" type="submit" py-click="add_symbol(6)">
-      </button>
-    </div>
-    <div>
-      <button id="btn7" class="py-button" type="submit" py-click="add_symbol(7)">
-    </div>
-    <div>
-      <button id="btn8" class="py-button" type="submit" py-click="add_symbol(8)">
-      </button>
-    </div>
-  </div>
-
-  <footer>
-    <div></div>
-    <div></div>
-  </footer>
-
 </body>
 
 </html>

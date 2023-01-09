@@ -39,7 +39,6 @@ def add_symbol(*args, **kwargs):
 
         # Update turn counter if user clicks on empty space on board
         turn_counter = turn_counter + 1
-        write('turn_counter', f"Turn {turn_counter}")
 
         if (x_turn):
             board_array[user_input] = "X"
@@ -83,7 +82,6 @@ def add_symbol(*args, **kwargs):
                         
                         # Reset Turn Counter & Gameboard
                         turn_counter = 0
-                        write('turn_counter', f"Turn {turn_counter}")
                         board_array = [
                                         "", "", "",
                                         "", "", "",
