@@ -40,16 +40,10 @@ def add_symbol(*args, **kwargs):
 
         # Update turn counter if user clicks on empty space on board
         turn_counter = turn_counter + 1
-
-        if (x_turn):
-            board_array[user_input] = "X"
-            write(f'btn{user_input}', "X")
-        else: 
-            board_array[user_input] = "O"
-            write(f'btn{user_input}', "O")
+        board_array[user_input] = utils.add_symbol(x_turn, user_input)
         
         # Check if winners on turn 5 (first possible turn with winning combination)
-        if turn_counter >= 5:
+        if  (5 <= turn_counter <= 8):
 
             # Loop through all possible (7) winning combinations
             for key, value in winning_combinations.items():
@@ -62,27 +56,18 @@ def add_symbol(*args, **kwargs):
 
                         # break the loop, add points to the winning X team and update score div
                         if board_array[value[0]] == "X":
-                            x_score += 1
-
-                            # check if "points are plural or singular"
-                            if x_score == 1:
-                                write('x_score', f"X: {x_score} point")
-                            else:
-                                write('x_score', f"X: {x_score} points")
+                            x_score = utils.update_x_score(x_score)
 
                         # add points to the winning Y team and update score div
                         else: 
-                            o_score += 1
-                            write('y_score', f"O: {o_score} Point")
-
-                            # check if "points are plural or singular"
-                            if o_score == 1:
-                                write('y_score', f"O: {o_score} point")
-                            else:
-                                write('y_score', f"O: {o_score} points")
+                            o_score = utils.update_o_score(o_score)
                         
                         # Reset Turn Counter & Gameboard
                         board_array = utils.reset_board()
                         turn_counter = 0
-                        
+        elif turn_counter == 9:
+    
+            # Reset Turn Counter & Gameboard - as the board is full
+            board_array = utils.reset_board()
+            turn_counter = 0
 
