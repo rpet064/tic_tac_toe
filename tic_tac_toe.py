@@ -3,8 +3,7 @@ import utils
 
 # global gamestate variables
 turn_counter = 0
-x_score = 0
-o_score = 0
+reset_scores = False
 
 # seperated into rows of 3 to show how is rendered in index.html
 board_array = [
@@ -27,7 +26,7 @@ winning_combinations = {
 }
 
 def add_symbol(*args, **kwargs):
-    global turn_counter, x_score, o_score, board_array, winning_combinations
+    global turn_counter, board_array, winning_combinations, reset_scores
 
     # even turns (0, 2, 4, 6) is X players's turn
     x_turn = turn_counter % 2 == 0
@@ -56,18 +55,18 @@ def add_symbol(*args, **kwargs):
 
                         # break the loop, add points to the winning X team and update score div
                         if board_array[value[0]] == "X":
-                            x_score = utils.update_x_score(x_score)
+                            utils.update_x_score()
 
                         # add points to the winning Y team and update score div
                         else: 
-                            o_score = utils.update_o_score(o_score)
+                            utils.update_o_score()
                         
                         # Reset Turn Counter & Gameboard
-                        board_array = utils.reset_board()
+                        board_array = utils.reset_board(reset_scores)
                         turn_counter = 0
         elif turn_counter == 9:
     
             # Reset Turn Counter & Gameboard - as the board is full
-            board_array = utils.reset_board()
+            board_array = utils.reset_board(reset_scores)
             turn_counter = 0
 

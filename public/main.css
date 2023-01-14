@@ -646,3 +646,13 @@ py-config{
   visibility: hidden;
   opacity: 0.0;
 }
+
+.x-bg-colour{
+  background-color: #1fb6ff;
+  color: whitesmoke;
+}
+
+.o-bg-colour{
+  background-color: #13ce66;
+  color: whitesmoke;
+}
