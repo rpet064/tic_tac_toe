@@ -1,26 +1,39 @@
 @import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
 
 /* body elements */
 
-* {
+*, body {
   padding: 0;
   margin: 0;
   text-align: center;
 }
 
+body{
+  background-color: #000000;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
 py-config{
   visibility: hidden;
   opacity: 0.0;
+  background-color: black;
 }
 
 .x-bg-colour{
   background-color: #1fb6ff;
-  color: whitesmoke;
+  background-image: url(../images/2.jpeg);
+  color: transparent;
+  background-size: cover;
 }
+
 
 .o-bg-colour{
   background-color: #13ce66;
-  color: whitesmoke;
+  background-image: url(../images/1.jpeg);
+  color: transparent;
+  background-size: cover;
+
 }
+
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";

@@ -1,8 +1,16 @@
 from pyscript import Element
 from js import document
+import random
 
+# Global Variables
 x_score = 0
 o_score = 0
+x_image = f"./images/{random.randint(1, 8)}.jpeg"  # Randomly choose image between jpeg 1 -> 8
+o_image = f"./images/{random.randint(1, 8)}.jpeg"  # Randomly choose image between jpeg 1 -> 8
+
+# changes o_image if same as x_image
+while x_image == o_image:
+    o_image = f"./images/{random.randint(1, 8)}.jpeg"
 
 def reset_board(reset_scores):
 
@@ -82,4 +90,18 @@ def update_o_score():
         o_scoreboard.element.innerHTML = f"O: {o_score} points"
 
     return o_score
+
+def check_score():
+    global x_score, o_score
+
+    # check if "points are plural or singular"
+    if x_score == 10:
+        print("x is the winner")
+    elif o_score == 10:
+        print("o is the winner")
+        
+    return x_score
+
+def draw():
+    print("It's a draw")
 

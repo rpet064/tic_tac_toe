@@ -7,12 +7,12 @@
   <!-- Google  Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Licorice&family=Montserrat:wght@100;400;700;900&family=Poppins&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="./public/main.css">
+  <link rel="stylesheet" href="./dist/output.css">
   <!-- pyscript -->
   <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 </head>
-<body>
+<body class="bg-[url('./images/background_image.png')]">
   <!-- Fetch files for game -->
    <py-config>
     [[fetch]]
@@ -21,17 +21,17 @@
   <py-script src="./tic_tac_toe.py">
   </py-script>
   
-  <div id="main" class="grid place-items-center">
+  <div id="main" class="grid place-items-center relative bottom-6 bg-[url('https://www.transparenttextures.com/patterns/asfalt-light.png')]">
 
     <!-- Scoreboard -->
     <div id="scoreboard" class="w-3/6 h-full py-5">
-      <div class="container m-auto grid grid-cols-2 gap-1 bg-black text-white py-5 text-5xl">
+      <div class="grid grid-cols-2 text-white pt-5 text-5xl">
         <div id="x_score">X: 0 Points</div>
         <div id="o_score">O: 0 Points</div> 
       </div>
     </div>
 
-    <div id="gameboard" class="h-24 w-3/6 cursor-pointer grid-cols-3">
+    <div id="gameboard" class="h-24 w-3/6 cursor-pointer grid-cols-3 absolute top-36">
 
       <!-- Row 1 -->
       <div class="h-full w-full grid grid-cols-3 bg-white text-black text-6xl">
@@ -87,6 +87,9 @@
         </button>
       </div>
     </div>
+  </div>
+  <div class="fixed bottom-0 left-0 w-screen h-12 text-white">
+    <p>© Robert Pether</p>
   </div>
 </body>
 

@@ -1,5 +1,6 @@
 from pyscript import Element, write
 import utils
+import random
 
 # global gamestate variables
 turn_counter = 0
@@ -11,6 +12,14 @@ board_array = [
     "", "", "",
     "", "", ""
 ]
+
+# Starting image - randomly choosen an image between 1 & 8
+x_image = f"./images/{random.randint(1, 8)}.jpeg"
+o_image = f"./images/{random.randint(1, 8)}.jpeg"
+
+# While loop will choosen a randon image until not the same as x_image
+while x_image == o_image:
+    o_image = f"./images/{random.randint(1, 8)}.jpeg"
 
 # This array contains all the possible winning solutions
 # solutions 0, 1 & 2 are horizontal, 3, 4, 5 - vertical, 6 & 7 are diagonal
@@ -42,7 +51,7 @@ def add_symbol(*args, **kwargs):
         board_array[user_input] = utils.add_symbol(x_turn, user_input)
         
         # Check if winners on turn 5 (first possible turn with winning combination)
-        if  (5 <= turn_counter <= 8):
+        if  (5 <= turn_counter <= 9):
 
             # Loop through all possible (7) winning combinations
             for key, value in winning_combinations.items():
@@ -53,20 +62,23 @@ def add_symbol(*args, **kwargs):
                     # checks these symbols are all the same
                     if board_array[value[0]] == board_array[value[1]] == board_array[value[2]]:
 
-                        # break the loop, add points to the winning X team and update score div
+                        # break the loop, add points to the winning X team, update score div and check if there is a winner
                         if board_array[value[0]] == "X":
                             utils.update_x_score()
+                            utils.check_score()
 
-                        # add points to the winning Y team and update score div
+                        # break the loop, add points to the winning Y team, update score div and check if there is a winner
                         else: 
                             utils.update_o_score()
+                            utils.check_score()
                         
                         # Reset Turn Counter & Gameboard
                         board_array = utils.reset_board(reset_scores)
                         turn_counter = 0
-        elif turn_counter == 9:
-    
-            # Reset Turn Counter & Gameboard - as the board is full
-            board_array = utils.reset_board(reset_scores)
-            turn_counter = 0
+                    
+                    # Reset board as there is no winner
+                    elif turn_counter == 9:
+                        board_array = utils.reset_board(reset_scores)
+                        turn_counter = 0
+                        utils.draw_animation()
 
