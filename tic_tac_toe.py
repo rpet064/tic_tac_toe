@@ -1,10 +1,8 @@
 from pyscript import Element, write
 import utils
-import random
 
 # global gamestate variables
 turn_counter = 0
-reset_scores = False
 
 # seperated into rows of 3 to show how is rendered in index.html
 board_array = [
@@ -12,14 +10,6 @@ board_array = [
     "", "", "",
     "", "", ""
 ]
-
-# Starting image - randomly choosen an image between 1 & 8
-x_image = f"./images/{random.randint(1, 8)}.jpeg"
-o_image = f"./images/{random.randint(1, 8)}.jpeg"
-
-# While loop will choosen a randon image until not the same as x_image
-while x_image == o_image:
-    o_image = f"./images/{random.randint(1, 8)}.jpeg"
 
 # This array contains all the possible winning solutions
 # solutions 0, 1 & 2 are horizontal, 3, 4, 5 - vertical, 6 & 7 are diagonal
@@ -73,12 +63,17 @@ def add_symbol(*args, **kwargs):
                             utils.check_score()
                         
                         # Reset Turn Counter & Gameboard
-                        board_array = utils.reset_board(reset_scores)
+                        board_array = utils.reset_board(reset_scores = False)
                         turn_counter = 0
                     
                     # Reset board as there is no winner
                     elif turn_counter == 9:
-                        board_array = utils.reset_board(reset_scores)
+                        board_array = utils.reset_board(reset_scores = False)
                         turn_counter = 0
                         utils.draw_animation()
+
+def reset_game():
+    utils.reset_board(reset_scores = True)
+    
+
 

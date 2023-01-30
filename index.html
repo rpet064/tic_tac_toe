@@ -12,7 +12,7 @@
   <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 </head>
-<body class="bg-[url('./images/background_image.png')]">
+<body>
   <!-- Fetch files for game -->
    <py-config>
     [[fetch]]
@@ -21,7 +21,7 @@
   <py-script src="./tic_tac_toe.py">
   </py-script>
   
-  <div id="main" class="grid place-items-center relative bottom-6 bg-[url('https://www.transparenttextures.com/patterns/asfalt-light.png')]">
+  <div id="main" class="grid place-items-center relative bottom-12">
 
     <!-- Scoreboard -->
     <div id="scoreboard" class="w-3/6 h-full py-5">
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div id="gameboard" class="h-24 w-3/6 cursor-pointer grid-cols-3 absolute top-36">
+    <div id="gameboard" class="h-24 w-3/6 cursor-pointer grid-cols-3 absolute top-32">
 
       <!-- Row 1 -->
       <div class="h-full w-full grid grid-cols-3 bg-white text-black text-6xl">
@@ -87,9 +87,13 @@
         </button>
       </div>
     </div>
-  </div>
-  <div class="fixed bottom-0 left-0 w-screen h-12 text-white">
-    <p>© Robert Pether</p>
+    <button
+        class="py-button fixed w-36 h-12 rounded bottom-16 bg-white 
+        type="submit" py-click="reset_game()">Reset
+      </button>
+    <div class="fixed bottom-0 h-12 text-white">
+      <p>© Robert Pether</p>
+    </div>
   </div>
 </body>
 

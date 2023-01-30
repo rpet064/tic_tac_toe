@@ -95,13 +95,15 @@ def check_score():
     global x_score, o_score
 
     # check if "points are plural or singular"
-    if x_score == 10:
+    if x_score == 9:
         print("x is the winner")
-    elif o_score == 10:
+    elif o_score == 9:
         print("o is the winner")
         
-    return x_score
+    reset_board(reset_scores = True)
 
-def draw():
+def draw_animation():
     print("It's a draw")
+    reset_board(reset_scores = True)
+
 

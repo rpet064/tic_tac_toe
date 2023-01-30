@@ -618,18 +618,14 @@ py-config{
   background-color: #1fb6ff;
   background-image: url(../images/2.jpeg);
   color: transparent;
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-size: cover;
 }
 
 .o-bg-colour{
   background-color: #13ce66;
   background-image: url(../images/1.jpeg);
   color: transparent;
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-size: cover;
 }
 
 .container {
