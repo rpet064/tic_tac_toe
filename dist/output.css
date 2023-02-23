@@ -1,4 +1,37 @@
-/*! tailwindcss v2.2.19 | MIT License | https://tailwindcss.com */
+/* body elements */
+
+*, body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+body{
+  background-color: #000000;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
+py-config{
+  visibility: hidden;
+  opacity: 0.0;
+  background-color: black;
+}
+
+.x-bg-colour{
+  background-color: #1fb6ff;
+  background-image: url(../images/2.jpeg);
+  color: transparent;
+  background-size: cover;
+}
+
+.o-bg-colour{
+  background-color: #13ce66;
+  background-image: url(../images/1.jpeg);
+  color: transparent;
+  background-size: cover;
+}
+
+/* ! tailwindcss v2.2.19 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -593,39 +626,6 @@ video {
 *, ::before, ::after {
   --tw-border-opacity: 1;
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
-}
-
-/* body elements */
-
-*, body {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-body{
-  background-color: #000000;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-}
-
-py-config{
-  visibility: hidden;
-  opacity: 0.0;
-  background-color: black;
-}
-
-.x-bg-colour{
-  background-color: #1fb6ff;
-  background-image: url(../images/2.jpeg);
-  color: transparent;
-  background-size: cover;
-}
-
-.o-bg-colour{
-  background-color: #13ce66;
-  background-image: url(../images/1.jpeg);
-  color: transparent;
-  background-size: cover;
 }
 
 .container {

@@ -5,12 +5,12 @@ import random
 # Global Variables
 x_score = 0
 o_score = 0
-x_image = f"./images/{random.randint(1, 8)}.jpeg"  # Randomly choose image between jpeg 1 -> 8
-o_image = f"./images/{random.randint(1, 8)}.jpeg"  # Randomly choose image between jpeg 1 -> 8
+x_image = f"./images/{random.randint(1, 4)}.png"  # Randomly choose image between png 1 -> 8
+o_image = f"./images/{random.randint(1, 4)}.png"  # Randomly choose image between png 1 -> 8
 
 # changes o_image if same as x_image
 while x_image == o_image:
-    o_image = f"./images/{random.randint(1, 8)}.jpeg"
+    o_image = f"./images/{random.randint(1, 4)}.png"
 
 def reset_board(reset_scores):
 
@@ -53,7 +53,7 @@ def add_symbol(x_turn, user_input):
 
         # add styled text to "user_input (clicked_button)"
         btn = Element(f'btn{user_input}')
-        btn.element.innerHTML = ("X")
+        btn.element.innerHTML = "X"
         btn.add_class("x-bg-colour")
         return "X"
     
@@ -97,13 +97,15 @@ def check_score():
     # check if "points are plural or singular"
     if x_score == 9:
         print("x is the winner")
+        reset_board(reset_scores = True)
+
     elif o_score == 9:
         print("o is the winner")
+        reset_board(reset_scores = True)
         
-    reset_board(reset_scores = True)
+    reset_board(reset_scores = False)
 
 def draw_animation():
     print("It's a draw")
-    reset_board(reset_scores = True)
 
 
