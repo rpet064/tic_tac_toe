@@ -22,10 +22,17 @@ py-config{
   color: white;
 }
 
-
 .o-bg-colour{
   background-color: #13ce66;
   color: white;
+}
+
+.hide_modal{
+  visibility: hidden!important;
+}
+
+.show_modal{
+  visibility: visible!important;
 }
 
 @import "tailwindcss/base";

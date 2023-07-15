@@ -86,23 +86,36 @@ def check_end_of_game():
     global x_score, o_score
 
     # Reset scores as end of game
-    if x_score == 10:
+    if x_score == 2:
         reset_board(reset_scores = True)
         return True
 
-    elif o_score == 10:
+    elif o_score == 2:
         reset_board(reset_scores = True)
         return True
 
     reset_board(reset_scores = False)
     return False
 
-def end_of_round_animation(end_of_round_message):
-        return 0
 
-def end_of_game_animation(end_of_game_message):
-        return 0
-    
-    
+def hide_modal(modal_id):
+    modal = Element(modal_id)
+    modal.add_class("hide_modal")
+    modal.remove_class("show_modal")
+
+
+def show_modal(modal_id):
+    modal = Element(modal_id)
+    modal.add_class("show_modal")
+    modal.remove_class("hide_modal")
+
+
+def end_of_round_animation(end_of_round_outcome):
+        show_modal("end-round-modal")
+
+
+def end_of_game_animation(end_of_game_outcome):
+        show_modal("end-game-modal")
+
 
 

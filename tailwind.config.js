@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.{html, js}"],
+  mode: 'jit',
+  purge: [
+    './public/**/*.html',
+    './src/**/*.{js,jsx,ts,tsx,vue}',
+  ],
   theme: {
     colors: {
       'blue': '#1fb6ff',
@@ -26,6 +30,12 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
+      },
+      width: {
+        'halfscreenwidth': '50%'
+      },
+      height: {
+        'halfscreenheight': '50%'
       }
     }
   },

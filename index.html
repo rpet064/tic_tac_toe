@@ -98,21 +98,28 @@
 
         Reset
       </button>
+    </div>
+
+    <!-- Start of game modal -->
+    <div id="start-game-modal" class="visible absolute top-1/3 left-1/3 bg-white w-72 h-72 ">
+        <button py-click="hide_modal('start-game-modal')">Close</button>
+    </div>
+
+     <!-- End of round modal -->
+     <div id="end-round-modal" class="invisible absolute top-1/2 left-1/2 bg-white w-72 h-72">
+        <button py-click="hide_modal('end-round-modal')">Close</button>
+     </div>
+
+    <!-- End of game modal -->
+    <div id="end-game-modal" class="invisible absolute top-1/2 left-1/2 w-72 h-72 bg-white">
+      <button py-click="hide_modal('end-game-modal')">Close</button>
+    </div>
 
       <!-- Footer -->
     <div class="fixed bottom-0 h-12 text-white">
       <p>© Robert Pether</p>
     </div>
 
-    <p>This is the main content. To display a lightbox click <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">here</a>
-    </p>
-    <div id="light" class="white_content">This is the lightbox content. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
-    </div>
-    <div id="fade" class="black_overlay"></div>
-    
-
-
-  </div>
 </body>
 
 </html>

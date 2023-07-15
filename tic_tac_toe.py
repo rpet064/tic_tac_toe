@@ -1,4 +1,3 @@
-from pyscript import Element, write
 import utils
 
 # global gamestate variables
@@ -63,9 +62,9 @@ def execute_turn(*args, **kwargs):
                             end_of_game = utils.check_end_of_game()
 
                             if (end_of_game):
-                                utils.end_of_game_animation("The winner is X, congratulations!")
+                                utils.end_of_game_animation("x")
                             else:
-                                utils.end_of_round_animation("X Wins!")
+                                utils.end_of_round_animation("x")
 
                         # break loop, add points to winning O team, update score div and check if end of game
                         else: 
@@ -73,9 +72,9 @@ def execute_turn(*args, **kwargs):
                             end_of_game = utils.check_end_of_game()
 
                             if (end_of_game):
-                                utils.end_of_game_animation("The winner is X, congratulations!")
+                                utils.end_of_game_animation("o")
                             else:
-                                utils.end_of_round_animation("O Wins!")                        
+                                utils.end_of_round_animation("o")                        
                         
                         # Reset Turn Counter & Gameboard
                         board_array = utils.reset_board(reset_scores = False)
@@ -85,9 +84,15 @@ def execute_turn(*args, **kwargs):
                     elif turn_counter == 9:
                         board_array = utils.reset_board(reset_scores = False)
                         turn_counter = 0
+                        utils.end_of_round_animation("draw")                        
+
 
 def reset_game():
     utils.reset_board(reset_scores = True)
+
+
+def hide_modal(modal_id):
+    utils.hide_modal(modal_id)
     
 
 
