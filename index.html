@@ -13,6 +13,7 @@
 </head>
 </head>
 <body>
+
   <!-- Fetch files for game -->
    <py-config>
     [[fetch]]
@@ -22,6 +23,10 @@
   </py-script>
   
   <div id="main" class="grid place-items-center relative bottom-12">
+
+    <div class="popup" onclick="myFunction()">Click me!
+      <span class="popuptext" id="myPopup">Popup text...</span> 
+    </div>
 
     <!-- Scoreboard -->
     <div id="scoreboard" class="w-3/6 h-full py-5">
@@ -37,17 +42,17 @@
       <div class="h-full w-full grid grid-cols-3 bg-white text-black text-6xl">
         <button id="btn0" 
         class="py-button w-full h-full border-r-2" 
-        type="submit" py-click="add_symbol(0)">
+        type="submit" py-click="execute_turn(0)">
         </button>
         
         <button id="btn1" 
         class="py-button w-full h-full border-r-2" 
-        type="submit" py-click="add_symbol(1)">
+        type="submit" py-click="execute_turn(1)">
         </button>
         
         <button id="btn2" 
         class="py-button w-full h-full" 
-        type="submit" py-click="add_symbol(2)">
+        type="submit" py-click="execute_turn(2)">
         </button>
         </div>
 
@@ -55,17 +60,17 @@
       <div class="w-full h-full grid grid-cols-3 bg-white text-black text-6xl">
         <button id="btn3" 
         class="py-button w-full h-full border-t-2 border-r-2" 
-        type="submit" py-click="add_symbol(3)">
+        type="submit" py-click="execute_turn(3)">
         </button>
         
         <button id="btn4" 
         class="py-button w-full h-full border-t-2 border-r-2" 
-        type="submit" py-click="add_symbol(4)">
+        type="submit" py-click="execute_turn(4)">
         </button>
         
         <button id="btn5" 
         class="py-button w-full h-full border-t-2" 
-        type="submit" py-click="add_symbol(5)">
+        type="submit" py-click="execute_turn(5)">
         </button>
       </div>
 
@@ -73,27 +78,40 @@
       <div class="w-full bg-white h-full grid grid-cols-3 text-black text-6xl">
         <button id="btn6" 
         class="py-button w-full h-full border-r-2 border-t-2" 
-        type="submit" py-click="add_symbol(6)">
+        type="submit" py-click="execute_turn(6)">
         </button>
 
         <button id="btn7" 
         class="py-button w-full h-full border-r-2 border-t-2" 
-        type="submit" py-click="add_symbol(7)">
+        type="submit" py-click="execute_turn(7)">
       </button>
 
         <button id="btn8" 
         class="py-button w-full h-full border-t-2" 
-        type="submit" py-click="add_symbol(8)">
+        type="submit" py-click="execute_turn(8)">
         </button>
       </div>
     </div>
     <button
         class="py-button fixed w-36 h-12 rounded bottom-16 bg-white 
-        type="submit" py-click="reset_game()">Reset
+        type="submit" py-click="reset_game()">
+
+        Reset
       </button>
+
+      <!-- Footer -->
     <div class="fixed bottom-0 h-12 text-white">
       <p>© Robert Pether</p>
     </div>
+
+    <p>This is the main content. To display a lightbox click <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">here</a>
+    </p>
+    <div id="light" class="white_content">This is the lightbox content. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+    </div>
+    <div id="fade" class="black_overlay"></div>
+    
+
+
   </div>
 </body>
 

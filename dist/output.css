@@ -19,16 +19,12 @@ py-config{
 
 .x-bg-colour{
   background-color: #1fb6ff;
-  background-image: url(../images/2.jpeg);
-  color: transparent;
-  background-size: cover;
+  color: white;
 }
 
 .o-bg-colour{
   background-color: #13ce66;
-  background-image: url(../images/1.jpeg);
-  color: transparent;
-  background-size: cover;
+  color: white;
 }
 
 /* ! tailwindcss v2.2.19 | MIT License | https://tailwindcss.com */

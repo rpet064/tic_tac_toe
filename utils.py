@@ -1,16 +1,9 @@
 from pyscript import Element
 from js import document
-import random
 
 # Global Variables
 x_score = 0
 o_score = 0
-x_image = f"./images/{random.randint(1, 4)}.png"  # Randomly choose image between png 1 -> 8
-o_image = f"./images/{random.randint(1, 4)}.png"  # Randomly choose image between png 1 -> 8
-
-# changes o_image if same as x_image
-while x_image == o_image:
-    o_image = f"./images/{random.randint(1, 4)}.png"
 
 def reset_board(reset_scores):
 
@@ -21,7 +14,6 @@ def reset_board(reset_scores):
         btn = Element(f'btn{i}')
         btn.remove_class("x-bg-colour")
         btn.remove_class("o-bg-colour")
-
 
     # Clear text from buttons
     for i in range (0, 9):
@@ -44,7 +36,6 @@ def reset_board(reset_scores):
         o_scoreboard = Element('o_score')
         o_scoreboard.element.innerHTML = f"O: {o_score} points"
 
-
     return board_array
 
 
@@ -53,16 +44,16 @@ def add_symbol(x_turn, user_input):
 
         # add styled text to "user_input (clicked_button)"
         btn = Element(f'btn{user_input}')
-        btn.element.innerHTML = "X"
         btn.add_class("x-bg-colour")
+        btn.element.innerHTML = "X"
         return "X"
     
     else: 
 
         # add styled text to "user_input (clicked_button)"
         btn = Element(f'btn{user_input}')
-        btn.element.innerHTML = ("O")
         btn.add_class("o-bg-colour")
+        btn.element.innerHTML = ("O")
         return "O"
 
 def update_x_score():
@@ -91,21 +82,27 @@ def update_o_score():
 
     return o_score
 
-def check_score():
+def check_end_of_game():
     global x_score, o_score
 
-    # check if "points are plural or singular"
-    if x_score == 9:
-        print("x is the winner")
+    # Reset scores as end of game
+    if x_score == 10:
         reset_board(reset_scores = True)
+        return True
 
-    elif o_score == 9:
-        print("o is the winner")
+    elif o_score == 10:
         reset_board(reset_scores = True)
-        
+        return True
+
     reset_board(reset_scores = False)
+    return False
 
-def draw_animation():
-    print("It's a draw")
+def end_of_round_animation(end_of_round_message):
+        return 0
+
+def end_of_game_animation(end_of_game_message):
+        return 0
+    
+    
 
 
