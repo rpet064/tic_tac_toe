@@ -7,15 +7,18 @@
 }
 
 body{
-  background-color: #000000;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  overflow: none;
 }
 
+/* Hides Message when browser is loading/downloading python */
 py-config{
   visibility: hidden;
   opacity: 0.0;
-  background-color: black;
+  color: white !important;
 }
+
+/* Class manages colours for X and O */
 
 .x-bg-colour{
   background-color: #1fb6ff;
@@ -26,6 +29,8 @@ py-config{
   background-color: #13ce66;
   color: white;
 }
+
+/* Class manages visibility of modal */
 
 .hide_modal{
   visibility: hidden!important;
